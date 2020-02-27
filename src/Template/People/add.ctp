@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p><?=$msg ?></p>
+    <?=$this->Form->create($entity,
+        ['type'=>'post',
+        'url'=>['controller'=>'People',
+        'action'=>'add']]) ?>
+    <fieldset class="form">
+        NAME: <?=$this->Form->error('People.name') ?>
+        <?=$this->Form->text('People.name') ?>
+        
+        MAIL: <?=$this->Form->error('People.mail') ?>
+        <?=$this->Form->text('People.mail') ?>
+        AGE: <?=$this->Form->error('People.age') ?>
+        <?=$this->Form->text('People.age') ?>
+        <?=$this->Form->submit('送信') ?>
+    </fieldset>
+    <?=$this->Form->end() ?>
+    
+</body>
+</html>
